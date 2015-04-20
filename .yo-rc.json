@@ -1,0 +1,14 @@
+{
+  "generator-angular-famous-ionic": {
+    "filenameCase": "camel",
+    "filenameSuffix": true,
+    "appname": "myfirstfamoapp",
+    "clientFolder": "client",
+    "ionic": false,
+    "famous": true,
+    "ngCordova": true,
+    "fontawesome": true,
+    "bootstrap": true,
+    "material": true
+  }
+}

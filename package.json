@@ -1,0 +1,92 @@
+{
+  "name": "myfirstfamoapp",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "gulp test",
+    "postinstall": "bower install && node ./bin/protractor-fix-version.js"
+  },
+  "dependencies": {
+    "famous": "^0.3.5",
+    "famous-polyfills": "^0.3.0"
+  },
+  "devDependencies": {
+    "gulp-uglify": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "browser": {
+    "unitHelper": "./test/unit/unitHelper.js",
+    "angular": "./bower_components/angular/angular.js",
+    "angular-mocks": "./bower_components/angular-mocks/angular-mocks.js",
+    "angular-ui-router": "./bower_components/angular-ui-router/release/angular-ui-router.js",
+    "angular-animate": "./bower_components/angular-animate/angular-animate.js",
+    "angular-sanitize": "./bower_components/angular-sanitize/angular-sanitize.js",
+    "famous-angular": "./bower_components/famous-angular/dist/famous-angular.js",
+    "ngCordova": "./bower_components/ngCordova/dist/ng-cordova.js",
+    "ngCordovaMocks": "./bower_components/ngCordova/dist/ng-cordova-mocks.js",
+    "angular-bootstrap": "./bower_components/angular-bootstrap/ui-bootstrap-tpls.js",
+    "angular-material": "./bower_components/angular-material/angular-material.js",
+    "angular-aria": "./bower_components/angular-aria/angular-aria.js"
+  },
+  "browserify": {
+    "transform": [
+      "html2js-browserify",
+      "jadeify",
+      "cssify",
+      "browserify-shim",
+      "brfs"
+    ]
+  },
+  "browserify-shim": {
+    "angular": {
+      "exports": "angular"
+    },
+    "angular-mocks": {
+      "exports": "angular",
+      "depends": [
+        "angular"
+      ]
+    },
+    "angular-ui-router": {
+      "depends": [
+        "angular"
+      ]
+    },
+    "famous-angular": {
+      "depends": [
+        "famous-polyfills",
+        "famous:famous",
+        "angular",
+        "angular-animate",
+        "angular-sanitize",
+        "angular-ui-router"
+      ]
+    },
+    "ngCordova": {
+      "exports": "ngCordova",
+      "depends": [
+        "angular"
+      ]
+    },
+    "ngCordovaMocks": {
+      "exports": "ngCordovaMocks",
+      "depends": [
+        "angular"
+      ]
+    },
+    "angular-bootstrap": {
+      "depends": [
+        "angular"
+      ],
+      "exports": "angular.module('ui.bootstrap').name"
+    },
+    "angular-material": {
+      "depends": [
+        "angular",
+        "angular-aria",
+        "angular-animate"
+      ]
+    }
+  }
+}
